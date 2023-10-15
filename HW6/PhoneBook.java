@@ -69,18 +69,18 @@ public class PhoneBook {
     public static void main(String[] args) {
         Map<String, List<String>> phoneBook = new HashMap<>();
 
-        addContact(phoneBook, "Иванов", "123-456-789");
-        addContact(phoneBook, "Петров", "987-654-321");
-        addContact(phoneBook, "Сидоров", "111-222-333");
-        addContact(phoneBook, "Иванов", "555-555-555");
-        addContact(phoneBook, "Петров", "999-999-999");
+        addContact(phoneBook, "Таня", "8-917-456-78-88");
+        addContact(phoneBook, "База", "465-65-23");
+        addContact(phoneBook, "Света", "8-654-265-46-12");
+        addContact(phoneBook, "Безя", "8-756-452-12-32");
+        addContact(phoneBook, "Нотя", "8-904-123-56-78");
 
         List<Map.Entry<String, List<String>>> sortedContacts = new ArrayList<>(phoneBook.entrySet());
         sortedContacts.sort((entry1, entry2) -> Integer.compare(entry2.getValue().size(), entry1.getValue().size()));
 
         for (Map.Entry<String, List<String>> entry : sortedContacts) {
-            System.out.println("Имя: " + entry.getKey());
-            System.out.println("Телефоны: " + entry.getValue());
+            System.out.println("Name: " + entry.getKey());
+            System.out.println("Phone number: " + entry.getValue());
         }
     }
 
@@ -88,3 +88,6 @@ public class PhoneBook {
         phoneBook.computeIfAbsent(name, k -> new ArrayList<>()).add(phoneNumber);
     }
 }
+
+
+
